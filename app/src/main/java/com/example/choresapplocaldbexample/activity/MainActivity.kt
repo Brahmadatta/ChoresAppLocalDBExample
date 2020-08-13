@@ -8,7 +8,9 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.example.choresapplocaldbexample.R
+import com.example.choresapplocaldbexample.data.ChoreListAdapter
 import com.example.choresapplocaldbexample.data.ChoresDatabaseHandler
 import com.example.choresapplocaldbexample.model.Chore
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     var dbHandler : ChoresDatabaseHandler ? = null
 
     var progressBar : ProgressDialog ?= null
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
