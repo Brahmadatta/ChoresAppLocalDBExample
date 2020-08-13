@@ -50,19 +50,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        var chore = Chore()
-//
-//        chore.choreName = "Clean Room"
-//        chore.assignedBy = "Datta"
-//        chore.assignedTo = "Mahesh"
-//
-//        dbHandler!!.createChore(chore)
-//
-//
-//        //read from database
-//        var chores : Chore = dbHandler!!.readChore(1)
-//        Log.d("readChore",chores.assignedBy)
-
     }
 
 
