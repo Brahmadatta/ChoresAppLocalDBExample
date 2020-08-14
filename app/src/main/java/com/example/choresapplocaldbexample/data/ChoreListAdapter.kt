@@ -25,7 +25,7 @@ class ChoreListAdapter(private val list: ArrayList<Chore>,
         holder?.bindViews(list[position])
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var chorename = itemView.findViewById(R.id.list_chore_name) as TextView
         var assignedBy = itemView.findViewById(R.id.list_assigned_by) as TextView
         var assignedDate = itemView.findViewById(R.id.list_date) as TextView
@@ -38,6 +38,10 @@ class ChoreListAdapter(private val list: ArrayList<Chore>,
             //assignedDate.text = chore.showHumanDate(chore.timeAssigned!!)
             assignedTo.text = chore.assignedTo
 
+
+        }
+
+        override fun onClick(v: View?) {
 
         }
     }

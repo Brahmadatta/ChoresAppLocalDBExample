@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChoresAppLocalDBExample</string>
+    <string name="menu_title">Add Chore</string>
 </resources>

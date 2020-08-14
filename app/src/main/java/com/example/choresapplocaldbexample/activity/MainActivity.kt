@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.choresapplocaldbexample.R
 import com.example.choresapplocaldbexample.data.ChoreListAdapter
@@ -19,9 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     var dbHandler : ChoresDatabaseHandler ? = null
 
-    var progressBar : ProgressDialog ?= null
-
-
+    var progressDialog : ProgressDialog ?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +29,14 @@ class MainActivity : AppCompatActivity() {
 
         dbHandler = ChoresDatabaseHandler(this)
 
-        progressBar = ProgressDialog(this)
+        progressDialog = ProgressDialog(this)
 
+
+        checkDB()
 
         save.setOnClickListener {
 
-            progressBar!!.setTitle("Saving..")
+            progressDialog!!.setTitle("Saving..")
             if (!TextUtils.isEmpty(choreName.text.toString()) && !TextUtils.isEmpty(assignedById.text.toString())
                 && !TextUtils.isEmpty(assigntold.text.toString()))
             {
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 chore.assignedTo = assigntold.text.toString()
 
                 saveChoreToDb(chore)
-                progressBar!!.cancel()
+                progressDialog!!.cancel()
                 startActivity(Intent(this,ChoreListActivity::class.java))
 
             }else{
@@ -56,9 +57,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun checkDB(){
+        if(dbHandler!!.getChoresCount() > 0)
+        {
+            startActivity(Intent(this,ChoreListActivity::class.java))
+        }
+    }
+
 
     fun saveChoreToDb(chore: Chore)
     {
         dbHandler!!.createChore(chore)
     }
+
 }
