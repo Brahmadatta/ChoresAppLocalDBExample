@@ -54,9 +54,10 @@ class ChoreListActivity : AppCompatActivity() {
         for (c in chorelist!!.iterator())
         {
              val chore = Chore()
-            chore.choreName = c.choreName
-            chore.assignedBy = c.assignedBy
-            chore.assignedTo = c.assignedTo
+            chore.id = c.id
+            chore.choreName = "Chore : ${c.choreName}"
+            chore.assignedBy = "Assigned By : ${c.assignedBy}"
+            chore.assignedTo = "Assigned To : ${c.assignedTo}"
             chore.showHumanDate(c.timeAssigned!!)
 
             choreListItems!!.add(chore)

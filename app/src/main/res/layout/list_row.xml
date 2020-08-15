@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,22 +50,23 @@
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <Button
+                android:id="@+id/list_edit_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/list_edit_button"
-                android:layout_alignStart="@id/list_date"
                 android:layout_alignBottom="@id/list_chore_name"
-                android:background="@android:drawable/ic_menu_edit"/>
+                android:layout_marginBottom="0dp"
+                android:layout_toLeftOf="@id/list_delete_button"
+                android:background="@android:drawable/ic_menu_edit" />
 
             <Button
+                android:id="@+id/list_delete_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/list_delete_button"
-                android:padding="12dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/list_edit_button"
                 android:layout_alignBottom="@id/list_chore_name"
-                android:background="@android:drawable/ic_delete"/>
+                android:layout_marginBottom="2dp"
+                android:layout_alignParentEnd="true"
+                android:background="@android:drawable/ic_delete"
+                android:padding="12dp" />
 
             <TextView
                 android:id="@+id/list_assigned_to"
